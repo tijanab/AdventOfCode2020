@@ -18,8 +18,8 @@ public class Two {
         }
 
         //part 1
-
         int valid = 0;
+        int valid2 = 0;
 
         for(int j = 0; j < array.length; j++){
             String miniString = array[j];
@@ -41,8 +41,19 @@ public class Two {
                 valid++;
             }
 
+            //part 2
+            int index1 = first -1;
+            int index2 = second -1;
 
+            String charIndex1 = String.valueOf(letters.charAt(index1));
+            String charIndex2 = String.valueOf(letters.charAt(index2));
+            String letter2 = String.valueOf(letter.charAt(1));
+
+            if((charIndex1.contains(letter2)) ^ (charIndex2.contains(letter2))){
+                valid2++;
+            }
         }
         System.out.println("Part 1 valid: " + valid);
+        System.out.println("Part 2 valid: " + valid2);
     }
 }
